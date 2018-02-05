@@ -1,0 +1,38 @@
+{
+  "name": "algolia-web-api",
+  "version": "1.0.0",
+  "description": "RESTful Web API to consume Algolia",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "algolia",
+    "search",
+    "api",
+    "webapi",
+    "restful",
+    "microservice"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theodorosidmar/algolia-web-api.git"
+  },
+  "author": "Sidmar Theodoro <theodorosidmar@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "algoliasearch": "^3.24.9",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "helmet": "^3.10.0",
+    "http-status": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.14.12"
+  }
+}
