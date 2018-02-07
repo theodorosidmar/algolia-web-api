@@ -1,5 +1,12 @@
 ## Dependency directories
 node_modules/
 
+## Package-lock
+package-lock.json
+
 ## dotenv enviroment variables file
 .env
+
+## Visual Studio
+.vscode
+.vs
