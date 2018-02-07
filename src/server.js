@@ -13,13 +13,13 @@ module.exports = async () => {
 
   const routes = join(__dirname, `routes/${process.env.API_VERSION}`);
   fs.readdirSync(routes).forEach(file =>
-    require(join(routes, file))(app, router));
+    require(join(routes, file))(router));
 
-  await configExpress(app);
+  await configExpress(app, router);
 
-  app.use(process.env.API_URL, router);
+  app.use(`${process.env.API_URL}/${process.env.API_VERSION}`, router);
 
   app.listen(process.env.PORT, () => {
-    log(`Algolia RESTful WebAPI listening on port ${process.env.PORT}`);
+    log(`Algolia service listening on port ${process.env.PORT}`);
   });
 };
