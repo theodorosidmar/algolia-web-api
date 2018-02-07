@@ -1,8 +1,7 @@
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const httpStatus = require('http-status');
-
-const Utils = require('../helpers/utils');
+const algoliasearch = require('algoliasearch');
 const responseHelper = require('../helpers/response');
 const Logger = require('../helpers/logger');
 
@@ -12,8 +11,22 @@ module.exports = async (app, router) => {
   app.use(helmet());
 
   app.use((req, res, next) => {
-    const data = Utils.getDataFromRequest(req);
+    const data = {
+      url: req.url,
+      baseUrl: req.baseUrl,
+      originalUrl: req.originalUrl,
+      method: req.method,
+      headers: req.headers,
+      body: req.body,
+      query: req.query,
+      params: req.params,
+    };
     Logger.log(data);
+    if (!req.headers.applicationid || !req.headers.apikey) {
+      const response = responseHelper.errorResponse('ApplicationID and APIKey must be provided');
+      return res.status(response.statusCode).json(response.data);
+    }
+    res.locals.algoliaClient = algoliasearch(req.headers.applicationid, req.headers.apikey);
     return next();
   });
 
