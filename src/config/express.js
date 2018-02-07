@@ -3,9 +3,10 @@ const helmet = require('helmet');
 const httpStatus = require('http-status');
 
 const Utils = require('../helpers/utils');
+const responseHelper = require('../helpers/response');
 const Logger = require('../helpers/logger');
 
-module.exports = async (app) => {
+module.exports = async (app, router) => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(helmet());
@@ -16,10 +17,10 @@ module.exports = async (app) => {
     return next();
   });
 
-  app.use((err, req, res, next) => {
-    const data = Utils.getDataFromRequest(req);
-    data.err = err;
-    Logger.logError(data);
-    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: err.message });
+  router.use((err, req, res, next) => {
+    Logger.logError(err);
+    const response =
+      responseHelper.errorResponse(err.message, err.statusCode || httpStatus.INTERNAL_SERVER_ERROR);
+    return res.status(response.statusCode).json(response.data);
   });
 };
