@@ -1,0 +1,35 @@
+const responseHelper = require('../../helpers/response');
+
+module.exports = (router) => {
+  router.put('/update', async (req, res, next) => {
+    try {
+      let response;
+      if (!req.body.indexName || !req.body.objects || !Array.isArray(req.body.objects)) {
+        response = responseHelper.errorResponse('You must provide indexName and objects as array');
+        return res.status(response.statusCode).json(response.data);
+      }
+      const index = res.locals.algoliaClient.initIndex(req.body.indexName);
+      const result = await index.saveObjects(req.body.objects);
+      response = responseHelper.defaultResponse(result);
+      return res.status(response.statusCode).json(response.data);
+    } catch (error) {
+      return next(error);
+    }
+  });
+
+  router.put('/update-partial', async (req, res, next) => {
+    try {
+      let response;
+      if (!req.body.indexName || !req.body.objects || !Array.isArray(req.body.objects)) {
+        response = responseHelper.errorResponse('You must provide indexName and objects as array');
+        return res.status(response.statusCode).json(response.data);
+      }
+      const index = res.locals.algoliaClient.initIndex(req.body.indexName);
+      const result = await index.partialUpdateObjects(req.body.objects);
+      response = responseHelper.defaultResponse(result);
+      return res.status(response.statusCode).json(response.data);
+    } catch (error) {
+      return next(error);
+    }
+  });
+};
