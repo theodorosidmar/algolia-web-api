@@ -1,0 +1,27 @@
+## Node modules
+node_modules
+
+## Docker
+Dockerfile
+docker-compose.yml
+
+## Git
+.git
+.gitignore
+gitflow/
+
+## eslint
+.eslintrc.json
+
+## Enviroment variables sample
+.env.sample
+
+## Read me
+README.md
+
+## package-lock
+package-lock.json
+
+## Visual Studio
+.vscode
+.vs
