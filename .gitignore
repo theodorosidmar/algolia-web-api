@@ -1,12 +1,24 @@
 ## Dependency directories
 node_modules/
 
-## Package-lock
+## package-lock
 package-lock.json
 
 ## dotenv enviroment variables file
-.env
+*.env
 
 ## Visual Studio
 .vscode
 .vs
+
+## Optional npm cache directory
+.npm
+
+## Optional eslint cache
+.eslintcache
+
+## Git
+gitflow/
+
+## Logs
+logs
