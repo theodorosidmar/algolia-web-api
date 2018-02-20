@@ -22,11 +22,7 @@ module.exports = async (app, router) => {
       params: req.params,
     };
     Logger.log(data);
-    if (!req.headers.applicationid || !req.headers.apikey) {
-      const response = responseHelper.errorResponse('ApplicationID and APIKey must be provided');
-      return res.status(response.statusCode).json(response.data);
-    }
-    res.locals.algoliaClient = algoliasearch(req.headers.applicationid, req.headers.apikey);
+    res.locals.algoliaClient = algoliasearch(process.env.APPLICATION_ID, process.env.API_KEY);
     return next();
   });
 
