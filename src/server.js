@@ -18,6 +18,7 @@ module.exports = async () => {
   await configExpress(app, router);
 
   app.use(`${process.env.API_URL}/${process.env.API_VERSION}`, router);
+  app.use('/', (req, res) => res.send());
 
   app.listen(process.env.PORT, () => {
     log(`Algolia service listening on port ${process.env.PORT}`);
