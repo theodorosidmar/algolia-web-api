@@ -1,5 +1,5 @@
 # Algolia global search Web API
 
-Web API to consume (search and create) any Algolia base
+RESTful Web API to consume any Algolia base
 
-README and api under construction
+README under construction
