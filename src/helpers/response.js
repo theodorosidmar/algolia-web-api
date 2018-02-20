@@ -1,4 +1,4 @@
-const httpStatus = require('http-status');
+const httpStatus = require('./http-status');
 
 exports.defaultResponse = (data, statusCode = httpStatus.OK) => ({
   data,

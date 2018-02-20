@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
-const httpStatus = require('http-status');
 const algoliasearch = require('algoliasearch');
+const httpStatus = require('../helpers/http-status');
 const responseHelper = require('../helpers/response');
 const Logger = require('../helpers/logger');
 
