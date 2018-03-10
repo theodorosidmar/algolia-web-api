@@ -23,7 +23,7 @@ module.exports = async () => {
   await configExpress(app, router);
 
   app.use('/api/v1', router);
-  app.use('/', (req, res) => res.send());
+  app.use('/', (req, res) => res.end());
 
   app.listen(process.env.PORT, () => {
     Logger.log(`Algolia service listening on port ${process.env.PORT}`);
