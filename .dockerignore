@@ -13,7 +13,8 @@ gitflow/
 ## eslint
 .eslintrc.json
 
-## Enviroment variables sample
+## Enviroment variables
+.env
 .env.sample
 
 ## Read me
