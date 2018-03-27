@@ -1,9 +1,9 @@
 ## Node modules
-node_modules
+node_modules/
 
 ## Docker
 Dockerfile
-docker-compose.yml
+.dockerignore
 
 ## Git
 .git
@@ -25,3 +25,9 @@ package-lock.json
 ## Visual Studio
 .vscode
 .vs
+
+## Makefile
+makefile
+
+## macOS DS_Store
+.DS_Store
