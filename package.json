@@ -4,9 +4,11 @@
   "description": "RESTful Web API to consume any Algolia",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "debug": "nodemon --inspect index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "debug": "nodemon --inspect index.js"
+  },
+  "engines": {
+    "node": "9.5.0"
   },
   "keywords": [
     "algolia",
@@ -20,7 +22,11 @@
     "type": "git",
     "url": "git+https://github.com/theodorosidmar/algolia-web-api.git"
   },
-  "author": "Sidmar Theodoro <theodorosidmar@gmail.com>",
+  "author": {
+    "email": "theodorosidmar@gmail.com",
+    "name": "Sidmar Theodoro",
+    "url": "https://theodorosidmar.github.io"
+  },
   "license": "ISC",
   "dependencies": {
     "algoliasearch": "^3.24.9",
