@@ -1,3 +1,3 @@
 module.exports = (router) => {
-  router.get('/health', (req, res) => res.end());
+  router.get('/health', (req, res) => res.json({ status: 'Ok' }));
 };
