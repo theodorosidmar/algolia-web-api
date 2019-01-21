@@ -1,5 +1,3 @@
 module.exports = (router) => {
-  router.get('/health', (req, res, next) => {
-    return res.end()
-  });
+  router.get('/health', (req, res) => res.end());
 };
