@@ -1,13 +1,17 @@
 FROM node:9.5.0-alpine
 
-RUN mkdir -p usr/src/app
+ENV WORKDIR /algolia-web-api
+ENV PORT 3000
 
-WORKDIR /usr/src/app
+WORKDIR ${WORKDIR}
 
-EXPOSE 3000
-
-COPY . /usr/src/app/
+COPY package.json ${WORKDIR}
+COPY package-lock.json ${WORKDIR}
 
 RUN npm install --no-cache --production
 
-CMD ["npm", "start"]
+COPY . ${WORKDIR}
+
+CMD npm start
+
+EXPOSE $PORT

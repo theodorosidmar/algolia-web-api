@@ -20,12 +20,8 @@ gitflow/
 ## Read me
 README.md
 
-## package-lock
-package-lock.json
-
-## Visual Studio
-.vscode
-.vs
+## Visual Studio Code
+.vscode/
 
 ## Makefile
 makefile
