@@ -1,7 +1,7 @@
 {
-    "extends": "airbnb-base",
-    "rules": {
-        "global-require": "off",
-        "import/no-dynamic-require": "off"
-    }
+  "extends": "airbnb-base",
+  "rules": {
+    "global-require": "off",
+    "import/no-dynamic-require": "off"
+  }
 }
