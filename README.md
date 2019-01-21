@@ -85,6 +85,9 @@ Error response (BAD_REQUEST):
 }
 ```
 
+## TODO
+* Tests
+
 ## Extras
 
 **Dockerfile** to create application image and **makefile** to help with Docker commands.
