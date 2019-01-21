@@ -87,6 +87,10 @@ Error response (BAD_REQUEST):
 
 ## TODO
 * Tests
+* Gracefully shutdown
+* Readiness check (?)
+* Requests caching layer
+* Refactor [this](https://github.com/theodorosidmar/algolia-web-api/blob/master/src/config/express.js#L25)
 
 ## Extras
 
