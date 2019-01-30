@@ -91,6 +91,7 @@ Error response (BAD_REQUEST):
 * Readiness check (?)
 * Requests caching layer
 * Refactor [this](https://github.com/theodorosidmar/algolia-web-api/blob/master/src/config/express.js#L25)
+* Implement a logging tool ([bunyan](https://github.com/trentm/node-bunyan) or [winston](https://github.com/winstonjs/winston) maybe)
 
 ## Extras
 
